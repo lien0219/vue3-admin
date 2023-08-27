@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { ElMessage } from 'element-plus'
 
+import useUserStore from '@/store/modules/user'
+
 let request = axios.create({
   baseURL: import.meta.env.VITE_APP_BASE_API, //基础路径，携带api
   timeout: 5000,
@@ -8,6 +10,13 @@ let request = axios.create({
 // 添加请求和响应拦截器
 request.interceptors.request.use((config) => {
   // 返回配置对象，（headers）
+
+  let userStore = useUserStore()
+
+  if (userStore.token) {
+    config.headers.token = userStore.token
+  }
+
   return config
 })
 request.interceptors.response.use(
