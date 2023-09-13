@@ -2,7 +2,7 @@ import { defineConfig, loadEnv } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import px2rem from 'postcss-px2rem'
+// import px2rem from 'postcss-px2rem'
 //mock插件提供方法
 import { viteMockServe } from 'vite-plugin-mock'
 
@@ -35,13 +35,13 @@ export default defineConfig(({ command, mode }) => {
           additionalData: '@import "./src/styles/variable.scss";',
         },
       },
-      postcss: {
-        plugins: [
-          px2rem({
-            remUnit: 192,
-          }),
-        ],
-      },
+      // postcss: {
+      //   plugins: [
+      //     px2rem({
+      //       remUnit: 192,
+      //     }),
+      //   ],
+      // },
     },
     server: {
       port: 3000, //端口号

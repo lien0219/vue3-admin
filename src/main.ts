@@ -11,13 +11,15 @@ import router from './router'
 // 仓库
 import pinia from './store'
 // 适配
-import '@/libflexible/flexible'
+// import '@/libflexible/flexible'
 // svg图标配置
 import 'virtual:svg-icons-register'
 // 自定义插件对象以及安装自定义插件
 import gloablComponent from './components/index'
 // 全局样式
 import '@/styles/index.scss'
+// 暗黑模式样式
+import 'element-plus/theme-chalk/dark/css-vars.css'
 
 // 获取应用实例
 const app = createApp(App)
