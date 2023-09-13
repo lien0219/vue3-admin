@@ -46,7 +46,7 @@
         prop="updateTime"
       ></el-table-column>
       <el-table-column label="操作" align="center">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <el-button
             type="primary"
             size="small"
@@ -231,6 +231,8 @@ const updateRole = (row: RoleData) => {
   })
 }
 const validatorRoleName = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value.trim().length >= 2) {
     callBack()
   } else {

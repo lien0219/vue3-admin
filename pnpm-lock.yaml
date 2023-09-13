@@ -23,6 +23,9 @@ dependencies:
   lib-flexible:
     specifier: ^0.3.2
     version: registry.npmmirror.com/lib-flexible@0.3.2
+  lodash:
+    specifier: ^4.17.21
+    version: registry.npmmirror.com/lodash@4.17.21
   moment:
     specifier: ^2.29.4
     version: registry.npmmirror.com/moment@2.29.4

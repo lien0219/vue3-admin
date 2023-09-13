@@ -9,7 +9,7 @@
     <el-form-item label="SPU品牌">
       <el-select v-model="SpuParams.tmId">
         <el-option
-          v-for="(item, index) in AllTradeMark"
+          v-for="item in AllTradeMark"
           :key="item.id"
           :label="item.tmName"
           :value="item.id"
@@ -53,7 +53,7 @@
       >
         <el-option
           :value="`${item.id}:${item.name}`"
-          v-for="(item, index) in unSelectSaleAttr"
+          v-for="item in unSelectSaleAttr"
           :key="item.id"
           :label="item.name"
         ></el-option>
@@ -81,7 +81,7 @@
           prop="saleAttrName"
         ></el-table-column>
         <el-table-column label="销售属性值">
-          <template #="{ row, $index }">
+          <template #="{ row }">
             <el-tag
               v-for="(item, index) in row.spuSaleAttrValueList"
               :key="row.id"
@@ -110,7 +110,7 @@
           </template>
         </el-table-column>
         <el-table-column label="操作" align="center">
-          <template #="{ row, $index }">
+          <template #="{ $index }">
             <el-button
               type="primary"
               size="small"

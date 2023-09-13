@@ -27,14 +27,14 @@
     <el-form-item label="平台属性">
       <el-form :inline="true">
         <el-form-item
-          v-for="(item, index) in attrArr"
+          v-for="item in attrArr"
           :key="item.id"
           :label="item.attrName"
         >
           <el-select v-model="item.attrIdAndValueId">
             <el-option
               :value="`${item.id}:${attrValue.id}`"
-              v-for="(attrValue, index) in item.attrValueList"
+              v-for="attrValue in item.attrValueList"
               :key="attrValue.id"
               :label="attrValue.valueName"
             ></el-option>
@@ -45,14 +45,14 @@
     <el-form-item label="销售属性">
       <el-form :inline="true">
         <el-form-item
-          v-for="(item, index) in saleArr"
+          v-for="item in saleArr"
           :key="item.id"
           :label="item.saleAttrName"
         >
           <el-select v-model="item.saleIdAndValueId">
             <el-option
               :value="`${item.id}:${saleAttrValue.id}`"
-              v-for="(saleAttrValue, index) in item.spuSaleAttrValueList"
+              v-for="saleAttrValue in item.spuSaleAttrValueList"
               :key="saleAttrValue.id"
               :label="saleAttrValue.saleAttrValueName"
             ></el-option>
@@ -68,13 +68,13 @@
           align="center"
         ></el-table-column>
         <el-table-column label="图片">
-          <template #="{ row, $index }">
+          <template #="{ row }">
             <img :src="row.imgUrl" alt="" style="widows: 60px; height: 60px" />
           </template>
         </el-table-column>
         <el-table-column label="名称" prop="imgName"></el-table-column>
         <el-table-column label="操作">
-          <template #="{ row, $index }">
+          <template #="{ row }">
             <el-button type="primary" size="small" @click="handler(row)">
               设置默认
             </el-button>

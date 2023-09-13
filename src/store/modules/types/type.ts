@@ -6,6 +6,7 @@ export interface UserState {
   menuRoutes: RouteRecordRaw[]
   username: string
   avatar: string
+  buttons: string[]
 }
 
 // 分类state类型

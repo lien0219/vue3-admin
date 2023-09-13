@@ -5,7 +5,7 @@
   var flexibleEl = doc.querySelector('meta[name="flexible"]')
   var dpr = 0
   var scale = 0
-  var tid
+  var tid: any
   var flexible = lib.flexible || (lib.flexible = {})
 
   if (metaEl) {

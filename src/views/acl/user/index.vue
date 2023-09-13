@@ -65,7 +65,7 @@
         show-overflow-tooltip
       ></el-table-column>
       <el-table-column label="操作" width="260px" align="center">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <el-button
             type="primary"
             size="small"
@@ -322,6 +322,8 @@ const cancel = () => {
 
 // 校验用户名字
 const valiatorUsername = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value.trim().length >= 5) {
     callBack()
   } else {
@@ -330,6 +332,8 @@ const valiatorUsername = (rule: any, value: any, callBack: any) => {
 }
 // 用户昵称
 const valiatorname = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value.trim().length >= 5) {
     callBack()
   } else {
@@ -338,6 +342,8 @@ const valiatorname = (rule: any, value: any, callBack: any) => {
 }
 // 用户密码
 const valiatorPassword = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value.trim().length >= 5) {
     callBack()
   } else {

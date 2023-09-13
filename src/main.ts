@@ -32,6 +32,8 @@ app.use(router)
 app.use(pinia)
 // 路由鉴权
 import './permisstion'
-
+// 自定义指令
+import { isHasButton } from '@/directive/has'
+isHasButton(app)
 // 挂载到挂载点上
 app.mount('#app')

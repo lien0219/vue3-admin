@@ -20,7 +20,7 @@
         prop="skuDesc"
       ></el-table-column>
       <el-table-column label="图片" width="150px">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <img
             :src="row.skuDefaultImg"
             alt=""
@@ -39,7 +39,7 @@
         prop="price"
       ></el-table-column>
       <el-table-column label="操作" width="270px" fixed="right">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <el-button
             type="primary"
             size="small"
@@ -188,7 +188,7 @@ const getHasSku = async (pager = 1) => {
 // }
 
 const handleSizeChange = (pageSizes: number) => {
-  // console.log(pageSizes)
+  console.log(pageSizes)
   getHasSku()
 }
 

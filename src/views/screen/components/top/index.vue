@@ -14,9 +14,9 @@
 </template>
 
 <script setup lang="ts">
+import moment from 'moment'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useRouter } from 'vue-router'
-import moment from 'moment'
 
 let $router = useRouter()
 // 存储当前时间

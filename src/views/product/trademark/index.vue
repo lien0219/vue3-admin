@@ -1,7 +1,13 @@
 <template>
   <el-card class="box-card">
     <!-- 添加品牌按钮 -->
-    <el-button type="primary" size="default" icon="Plus" @click="addTrademark">
+    <el-button
+      type="primary"
+      size="default"
+      icon="Plus"
+      @click="addTrademark"
+      v-has="`btn.Trademark.add`"
+    >
       添加品牌
     </el-button>
     <!-- 表格展示平台数据 -->
@@ -13,25 +19,25 @@
         type="index"
       ></el-table-column>
       <el-table-column label="品牌名称">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <pre style="color: brown">
             {{ row.tmName }}
           </pre>
         </template>
       </el-table-column>
       <el-table-column label="品牌LOGO">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <img :src="row.logoUrl" alt="" style="width: 100px; height: 100px" />
         </template>
       </el-table-column>
       <el-table-column label="品牌操作">
-        <template #="{ row, $index }">
+        <template #="{ row }">
           <!-- 操作 -->
           <el-button
             type="primary"
             size="small"
             icon="Edit"
-            @click="($event) => updateTrademark(row)"
+            @click="updateTrademark(row)"
           ></el-button>
           <!-- 气泡框 -->
           <el-popconfirm
@@ -272,6 +278,8 @@ const handleAvatarSuccess: UploadProps['onSuccess'] = (
 
 // 品牌自定义校验
 const validatorTmName = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value.trim().length >= 2) {
     callBack()
   } else {
@@ -280,6 +288,8 @@ const validatorTmName = (rule: any, value: any, callBack: any) => {
 }
 // 品牌logo自定义校验
 const validatorLogoUrl = (rule: any, value: any, callBack: any) => {
+  console.log(rule)
+
   if (value) {
     callBack()
   } else {
